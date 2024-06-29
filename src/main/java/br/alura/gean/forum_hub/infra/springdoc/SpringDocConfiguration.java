@@ -14,25 +14,25 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
 @Configuration
 public class SpringDocConfiguration {
 
-    @Bean
-    OpenAPI customOpenAPI() {
-        return new OpenAPI()
-                .components(new Components()
-                        .addSecuritySchemes("bearer-key", new SecurityScheme()
-                                .type(SecurityScheme.Type.HTTP)
-                                .scheme("bearer")
-                                .bearerFormat("JWT")))
-                .info(new Info()
-                        .title("Forum_Hub Api")
-                        .description(
-                                "Api Rest com funcionalidades de CRUD de um Fórum (Usuários, Cursos, Tópicos e Respostas)")
-                        .contact(new Contact()
-                                .name("Gean Moura"))
-                        .license(new License()
-                                .name("Apache 2.0")
-                                .url("http://springdoc.org")))
-                .externalDocs(new ExternalDocumentation()
-                        .description("Link do Repositório da Aplicação")
-                        .url("https://github.com/geanmm/java-spring-forumhub"));
-    }
+        @Bean
+        OpenAPI customOpenAPI() {
+                return new OpenAPI()
+                                .components(new Components()
+                                                .addSecuritySchemes("bearer-key", new SecurityScheme()
+                                                                .type(SecurityScheme.Type.HTTP)
+                                                                .scheme("bearer")
+                                                                .bearerFormat("JWT")))
+                                .info(new Info()
+                                                .title("Forum_Hub Api")
+                                                .description(
+                                                                "API REST com funcionalidades de CRUD em um Fórum (com Usuários, Cursos, Tópicos e Respostas).")
+                                                .contact(new Contact()
+                                                                .name("Gean Moura"))
+                                                .license(new License()
+                                                                .name("Apache 2.0")
+                                                                .url("http://springdoc.org")))
+                                .externalDocs(new ExternalDocumentation()
+                                                .description("Link do Repositório da Aplicação")
+                                                .url("https://github.com/geanmm/java-spring-forumhub"));
+        }
 }
